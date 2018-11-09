@@ -1,0 +1,12 @@
+<ion-list>
+  <ion-item>
+    <ion-avatar item-start>
+      <img src="assets/imgs/user.png">
+    </ion-avatar>
+    <h2>{{userData.Name}}</h2>
+    <p>{{userData.Email}}</p>
+  </ion-item>
+  <ion-item no-padding>
+    <button ion-button clear item-right (click)="signOut()">Signout</button>
+  </ion-item>
+</ion-list>

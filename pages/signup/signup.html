@@ -1,0 +1,66 @@
+<ion-header>
+
+</ion-header>
+
+
+<ion-content class="background">
+  <form *ngIf="registrationForm" [formGroup]="registrationForm">
+    <ion-card>
+      <ion-card-header>
+        Signup
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list>
+          <ion-item>
+            <ion-label style="color: #fff;">Select account Type</ion-label>
+            <ion-select style="color: #fff;" formControlName="Type">
+              <ion-option value="faculty">Faculty</ion-option>
+              <ion-option value="student">student</ion-option>
+            </ion-select>
+          </ion-item>
+          <ion-item>
+            <ion-input type="text" placeholder="Name" formControlName="Name"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input type="email" placeholder="Email" formControlName="Email"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input type="password" placeholder="Password" formControlName="Passcode"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input type="number" placeholder="Mobile No" formControlName="MobileNo"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label style="color: #fff;">Select Department</ion-label>
+            <ion-select style="color: #fff;" formControlName="Department">
+              <ion-option value="it">Info Tech</ion-option>
+              <ion-option value="ce">Computer</ion-option>
+              <ion-option value="mech">Mechanicle</ion-option>
+              <ion-option value="ec">Electronics & comm</ion-option>
+              <ion-option value="civil">Civil</ion-option>
+              <ion-option value="bt">BioTech</ion-option>
+              <ion-option value="nano">Nano Technology</ion-option>
+            </ion-select>
+          </ion-item>
+          <ion-item>
+            <ion-label style="color: #fff;">Select Semester</ion-label>
+            <ion-select style="color: #fff;" formControlName="Sem">
+              <ion-option value="1">1</ion-option>
+              <ion-option value="2">2</ion-option>
+              <ion-option value="3">3</ion-option>
+              <ion-option value="4">4</ion-option>
+              <ion-option value="5">5</ion-option>
+              <ion-option value="6">6</ion-option>
+              <ion-option value="7">7</ion-option>
+              <ion-option value="8">8</ion-option>
+            </ion-select>
+          </ion-item>
+          <button [disabled]="registrationForm.invalid" ion-button full clear color="light" (click)="onSubmit()">
+            Submit
+          </button>
+          <button ion-button full clear color="light" (click)="goback()">Go Back</button>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+  </form>
+</ion-content>

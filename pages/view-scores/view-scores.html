@@ -1,0 +1,40 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>View Score</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card *ngFor="let test of testArray; let i = index">
+    <ion-card-header style="color: white;">
+      Tests
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label>
+          <p>
+            <b>Title :</b>{{test.Title}}
+          </p>
+          <br>
+          <p>
+            <b>Sem :</b>{{test.Semester}}
+          </p>
+          <p>
+            <b>Subject :</b>{{test.Subject}}
+          </p>
+          <p>
+            <b>Marks :</b>{{marksArray[i]}}
+          </p>
+        </ion-label>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+  <div *ngIf="testArray.length==0">
+    <p>
+      Currently there is no scores to display!
+    </p>
+  </div>
+</ion-content>

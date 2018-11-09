@@ -1,0 +1,45 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Add Question</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form [formGroup]="questionsForm">
+    <ion-list>
+      <ion-item>
+        <ion-label floating>Question</ion-label>
+        <ion-textarea formControlName="Question"></ion-textarea>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Option-1</ion-label>
+        <ion-input formControlName="Option1"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Option-2</ion-label>
+        <ion-input formControlName="Option2"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Option-3</ion-label>
+        <ion-input formControlName="Option3"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Option-4</ion-label>
+        <ion-input formControlName="Option4"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Select Answer</ion-label>
+        <ion-select formControlName="Answer">
+          <ion-option value="A">A</ion-option>
+          <ion-option value="B">B</ion-option>
+          <ion-option value="C">C</ion-option>
+          <ion-option value="D">D</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+  </form>
+  <button ion-button [disabled]="questionsForm.invalid" (click)="dismiss()" block>Add Question</button>
+</ion-content>

@@ -1,0 +1,36 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Exam Dashboard</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list *ngFor="let que of questions; let i = index">
+    <p>
+      <b>{{i+1}} :</b>
+      {{que.Question}}
+    </p>
+    <ion-list no-lines radio-group [(ngModel)]="answers[i]">
+      <ion-item>
+        <ion-label>{{que.Option1}}</ion-label>
+        <ion-radio value="A"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>{{que.Option2}}</ion-label>
+        <ion-radio value="B"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>{{que.Option3}}</ion-label>
+        <ion-radio value="C"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>{{que.Option4}}</ion-label>
+        <ion-radio value="D"></ion-radio>
+      </ion-item>
+    </ion-list>
+  </ion-list>
+  <button ion-button block (click)="terminate()" block>Terminate Exam</button>
+</ion-content>

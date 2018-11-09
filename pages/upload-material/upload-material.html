@@ -1,0 +1,53 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Upload Material</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form [formGroup]="materialsForm">
+    <ion-list>
+      <ion-item>
+        <ion-label floating>Select Department</ion-label>
+        <ion-select formControlName="Department">
+          <ion-option value="it">Info Tech</ion-option>
+          <ion-option value="ce">Computer</ion-option>
+          <ion-option value="mech">Mechanicle</ion-option>
+          <ion-option value="ec">Electronics & comm</ion-option>
+          <ion-option value="civil">Civil</ion-option>
+          <ion-option value="bt">BioTech</ion-option>
+          <ion-option value="nano">Nano Technology</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Semester</ion-label>
+        <ion-select formControlName="Semester">
+          <ion-option value="1">1</ion-option>
+          <ion-option value="2">2</ion-option>
+          <ion-option value="3">3</ion-option>
+          <ion-option value="4">4</ion-option>
+          <ion-option value="5">5</ion-option>
+          <ion-option value="6">6</ion-option>
+          <ion-option value="7">7</ion-option>
+          <ion-option value="8">8</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Subject</ion-label>
+        <ion-input type="text" formControlName="Subject"></ion-input>
+      </ion-item>
+    </ion-list>
+  </form>
+  <div *ngIf="arr.length>0">
+    <ion-list>
+      <ion-item *ngFor="let x of arr">
+        <ion-label>{{x}}</ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+  <button ion-button [disabled]="materialsForm.invalid" (click)="chooseFile()" block>Choose File</button>
+  <button ion-button (click)="uploadFile()" block>Upload File</button>
+</ion-content>

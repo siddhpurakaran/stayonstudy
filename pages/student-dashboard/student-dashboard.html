@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Student Dashboard</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="presentPopover($event)">
+        <ion-icon name="person"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-row>
+    <ion-col col-6>
+      <ion-card (click)="attendTest()">
+        <ion-card-header>
+          <ion-icon name="clipboard" class="tile-icon"></ion-icon>
+        </ion-card-header>
+        <ion-card-content>
+          Attend
+          <br>Tests
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+
+    <ion-col col-6>
+      <ion-card (click)="viewMaterial()">
+        <ion-card-header>
+          <ion-icon name="document" class="tile-icon"></ion-icon>
+        </ion-card-header>
+        <ion-card-content>
+          View
+          <br> Material
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col col-6>
+      <ion-card (click)="viewScores()">
+        <ion-card-header>
+          <ion-icon name="folder-open" class="tile-icon"></ion-icon>
+        </ion-card-header>
+        <ion-card-content>
+          View
+          <br>Scores
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+
+</ion-content>

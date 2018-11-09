@@ -1,0 +1,43 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Materials</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card *ngFor="let obj of materials; let i = index">
+    <ion-card-header style="color: white;">
+      Document
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label>
+          <p>
+            <b>Department :</b>{{obj.Department}}
+          </p>
+          <br>
+          <p>
+            <b>Semester :</b>{{obj.Semester}}
+          </p>
+          <p>
+            <b>Subject :</b>{{obj.Subject}}
+          </p>
+        </ion-label>
+      </ion-item>
+      <ion-item *ngFor="let item of obj.Files; let i =index">
+        <ion-icon name="folder" item-start (click)="onDownload(item)"></ion-icon>
+        <ion-label>
+          {{i+1}}
+        </ion-label>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+  <div *ngIf="materials.length==0">
+    <p>
+      Currently there is no materials!
+    </p>
+  </div>
+</ion-content>

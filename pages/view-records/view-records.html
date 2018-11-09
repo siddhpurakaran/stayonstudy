@@ -1,0 +1,37 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>View Records</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card (click)="onClick()" *ngFor="let test of testArray">
+    <ion-card-header style="color: white;">
+      Tests
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label>
+          <p>
+            <b>Title :</b>{{test.Title}}
+          </p>
+          <br>
+          <p>
+            <b>Sem :</b>{{test.Semester}}
+          </p>
+          <p>
+            <b>Subject :</b>{{test.Subject}}
+          </p>
+        </ion-label>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+  <div *ngIf="testArray.length==0">
+    <p>
+      Currently there is no records to display!
+    </p>
+  </div>
+</ion-content>

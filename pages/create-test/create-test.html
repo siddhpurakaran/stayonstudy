@@ -1,0 +1,72 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Create Test</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <form [formGroup]="TestForm">
+    <ion-list>
+      <ion-item>
+        <ion-label floating>Select Department</ion-label>
+        <ion-select formControlName="Department">
+          <ion-option value="it">Info Tech</ion-option>
+          <ion-option value="ce">Computer</ion-option>
+          <ion-option value="mech">Mechanicle</ion-option>
+          <ion-option value="ec">Electronics & comm</ion-option>
+          <ion-option value="civil">Civil</ion-option>
+          <ion-option value="bt">BioTech</ion-option>
+          <ion-option value="nano">Nano Technology</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Semester</ion-label>
+        <ion-select formControlName="Semester">
+          <ion-option value="1">1</ion-option>
+          <ion-option value="2">2</ion-option>
+          <ion-option value="3">3</ion-option>
+          <ion-option value="4">4</ion-option>
+          <ion-option value="5">5</ion-option>
+          <ion-option value="6">6</ion-option>
+          <ion-option value="7">7</ion-option>
+          <ion-option value="8">8</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Subject</ion-label>
+        <ion-input type="text" formControlName="Subject"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Title</ion-label>
+        <ion-input type="text" formControlName="Title"></ion-input>
+      </ion-item>
+    </ion-list>
+    <div *ngIf="questionArr.length>0">
+      <ion-list>
+        <ion-item *ngFor="let x of questionArr; let i = index;">
+          <ion-label>Que-{{questionArr[i].Question}} {{questionArr[i].Answer}}
+            <p>
+              <ion-row [style.color]="questionArr[i].Answer=='A'?'greenyellow':'red'">A :{{questionArr[i].Option1}}</ion-row>
+            </p>
+            <p>
+              <ion-row [style.color]="questionArr[i].Answer=='B'?'greenyellow':'red'">B :{{questionArr[i].Option2}}</ion-row>
+            </p>
+            <p>
+              <ion-row [style.color]="questionArr[i].Answer=='C'?'greenyellow':'red'">C :{{questionArr[i].Option3}}</ion-row>
+            </p>
+            <p>
+              <ion-row [style.color]="questionArr[i].Answer=='D'?'greenyellow':'red'">D :{{questionArr[i].Option4}}</ion-row>
+            </p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </div>
+  </form>
+  <button ion-button (click)="addQuestion()" block>Add Question</button>
+  <button ion-button [disabled]="TestForm.invalid || questionArr.length==0" (click)="setExam()" block>Set Exam</button>
+
+</ion-content>
